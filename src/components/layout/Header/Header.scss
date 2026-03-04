@@ -1,0 +1,150 @@
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/mixins" as m;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 80px;
+  margin-bottom: 32px;
+  width: 100vw;
+  @include m.desktop {
+    gap: 30px;
+  }
+  @include m.laptop {
+    gap: 15px;
+  }
+  @include m.tablet {
+    gap: 0;
+  }
+  @include m.mobile {
+    margin-bottom: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    @include m.tablet {
+      padding: 0 10px;
+    }
+
+    @include m.mobile {
+      padding: 0 5px;
+    }
+  }
+  &__avatar{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+  }
+
+    &__avatar-img{
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    width:30px;
+    height: 30px;
+     @include ty.text-10-regular;
+    
+  }
+
+  &__account-arrow{
+    padding-left: 10px;
+    width: 14px;
+    height: 11px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 29px 0;
+    position: relative;
+  }
+
+  &__top::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: v.$color-white-60;
+  }
+
+  &__title {
+    margin: 0;
+    padding: 108px 0;
+    color: v.$color-white;
+    text-transform: uppercase;
+    @include ty.text-48-bold;
+  }
+
+  &--home {
+    height: 422px;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("../../../assets/images/header-bg-1.jpg") center/cover no-repeat;
+  }
+
+  &--inner {
+    height: 251px;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("../../../assets/images/header-bg-1.jpg") center/cover no-repeat;
+    & .header__container {
+      height: 100%;
+    }
+       & .header__title {
+      padding: 40px 0;
+    }
+  }
+
+    .header__dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    min-width: 150px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    z-index: 1000;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .header__dropdown-item {
+      padding: 10px 15px;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      color: v.$color-black;
+      @include ty.text-14-regular;
+
+      &:hover {
+        background: v.$color-white-60;
+      }
+    }
+  }
+
+}
+

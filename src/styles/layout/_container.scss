@@ -1,0 +1,21 @@
+@use "../abstract/mixins" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @include tablet {
+    padding: 0 10px;
+  }
+
+  @include mobile {
+    padding: 0 5px;
+  }
+}
+
+

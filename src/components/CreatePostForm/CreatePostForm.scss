@@ -1,0 +1,152 @@
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 0;
+  width: 100%;
+  height: 100%;
+  min-height: 739px;
+  border: 1px solid v.$color-border-gray;
+  border-radius: 24px;
+  background-color: v.$color-white;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 695px;
+    margin: 0 auto auto;
+  }
+
+  &__title {
+    margin: 0 0 20px 0;
+    color: v.$color-black-title;
+    align-self: center;
+    @include ty.text-36-semibold;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__file-input{
+    display:none;
+  }
+
+  &__file-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 8px;
+    margin-bottom: 30px;   
+    gap: 8px;
+    width: 200px;
+    border: 1px solid  v.$color-black-25;
+     @include ty.text-14-regular;
+   }
+
+  &__file-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:v.$color-black-25;
+    }
+
+  &__file-text{
+    color:v.$color-black-85;
+    }
+  
+  &__country-city{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap:10px;
+    
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   &__link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: v.$color-btn-primary;
+    padding: 12.5px 30px;
+    border: 2px solid v.$color-btn-primary;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+     @include ty.text-16-24-semibold;
+    
+
+    &:hover,
+    &:focus-visible {
+      background-color: v.$color-btn-primary;
+      color: v.$color-white;
+    }
+  }
+
+  &__link-arrow {
+  display: flex;
+  align-items: center;
+}
+
+ &__textaria-label{
+   @include ty.text-14-regular;
+  color: v.$color-black;
+   }
+
+  &__photo {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    align-self: center;
+  }
+
+ &__photo-preview {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  max-width: 300px;
+  border-radius: 12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+
+  .create-post-form__btn-clear {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: v.$color-black;
+    color: v.$color-white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: v.$color-btn-primary;
+    }
+  }
+}
+}

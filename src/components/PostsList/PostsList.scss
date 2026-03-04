@@ -1,0 +1,73 @@
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/mixins" as m;
+
+.posts {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+  gap: 20px;
+
+  &__list {
+    height: 1135px; // фиксированная высота
+    overflow-y: auto; // скролл только внутри списка
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 0;
+    margin-bottom: 60px;
+    padding: 0;
+    list-style: none;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE */
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    @include m.laptop {
+      grid-template-columns: repeat(3, 224px);
+      gap: 30px;
+      justify-content: center;
+    }
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 335px);
+      gap: 20px;
+    }
+    @include m.mobile {
+      padding: 0 10px;
+      grid-template-columns: 1fr;
+      gap: 24px 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 552px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 1px 10px 0px #0000001a;
+    @include m.tablet {
+      height: 502px;
+    }
+  }
+
+  &__add-post{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+
+}

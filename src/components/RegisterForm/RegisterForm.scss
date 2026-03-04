@@ -1,0 +1,57 @@
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.register-form {
+  display: flex;
+  padding: 28px 0;
+  width: 100%;
+  height: 100%;
+  min-height: 739px;
+  border: 1px solid v.$color-border-gray;
+  border-radius: 24px;
+  background-color: v.$color-white;
+  opacity: 1;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+     width: 100%;
+    max-width: 695px;
+    margin: 0 auto auto;
+   }
+
+   &__title{
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    color: v.$color-black-title;
+    align-self: center;
+    @include ty.text-36-semibold;
+     
+   }
+
+   &__inputs{
+
+    display: flex;
+    flex-direction: column;
+     }
+
+    &__password{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap:20px;
+      
+    }
+
+   &__buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+   }
+}

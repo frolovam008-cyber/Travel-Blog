@@ -1,0 +1,27 @@
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.header {
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+ 
+    @include m.tablet {
+      width: 112px;
+      height: 25px;
+    }
+
+    @include m.mobile {
+      width: 80.62px;
+      height: 18px;
+    }
+  }
+
+  &__logo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,112 @@
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/mixins" as m;
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+
+  &__top {
+    display: flex;
+    width: 100%;
+    height: 288px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__center {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 10px;
+    padding: 25px 25px 0px 25px;
+  }
+  &__title {
+    margin: 0;
+    padding: 0;
+    @include ty.text-18-semibold;
+    color: v.$color-black-title;
+  }
+  &__description {
+    margin: 0;
+    padding: 0;
+    @include ty.text-15-regular;
+    color: v.$color-gray;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 25px 25px 25px;
+    margin-top: auto;
+  }
+
+  &__city {
+    @include ty.text-14-medium;
+    color: v.$color-black-title;
+  }
+
+  &__link {
+    @include ty.text-14-medium;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: v.$color-black;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__link-text {
+    position: relative;
+    display: inline-block;
+    color: v.$color-btn-primary;
+  }
+
+  /* Линия */
+  &__underline {
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1.5px;
+    width: 100%;
+    background-color: v.$color-btn-primary;
+
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Стрелка */
+  &__link-arrow {
+    display: flex;
+    align-items: center;
+    color: v.$color-btn-primary;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /*Hover эффект */
+  &__link:hover &__underline,
+  &__link:focus-visible &__underline {
+    transform: scaleX(0);
+  }
+
+  &__link:hover &__link-arrow,
+  &__link:focus-visible &__link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.15s;
+  }
+}

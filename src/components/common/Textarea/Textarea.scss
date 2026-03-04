@@ -1,0 +1,103 @@
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.auth-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: inherit;
+  position: relative;
+
+  &.is-disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .textarea {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    transition:
+      border-color 0.25s ease,
+      box-shadow 0.25s ease,
+      background-color 0.25s ease;
+    background-color: #fff;
+    cursor: text;
+
+    &.is-focused {
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    }
+
+    &.is-error {
+      border-color: #dc3545;
+      box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+    }
+
+    .textarea__icon-left,
+    .textarea__icon-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .textarea__icon-left {
+      margin-right: 8px;
+    }
+
+    .textarea__icon-right {
+      margin-left: 8px;
+    }
+
+    .textarea__field {
+      flex: 1;
+      border: none;
+      outline: none;
+
+      @include ty.text-14-regular;
+      line-height: 1.5;
+      background: transparent;
+      resize: none;
+      overflow-y: auto; // вертикальный скролл при переполнении
+      min-height: 80px; // примерно 4 строки
+      max-height: 200px; // ограничение по высоте
+      transition:
+        color 0.25s ease,
+        background-color 0.25s ease;
+
+      &::placeholder {
+        color: #999;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease;
+      }
+
+      &:disabled {
+        background-color: #f8f9fa;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .textarea__error {
+    @include ty.text-14-regular;
+    color: #dc3545;
+    margin-top: 4px;
+    transition: opacity 0.25s ease;
+  }
+
+  .textarea__counter {
+    @include ty.text-14-regular;
+    color: #888; // цвет счетчика
+    text-align: right;
+    margin-top: 4px;
+  }
+}

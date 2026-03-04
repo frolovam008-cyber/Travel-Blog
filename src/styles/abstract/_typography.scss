@@ -1,0 +1,57 @@
+@use "@/styles/abstract/variables" as v;
+
+/* Базовый миксин */
+@mixin text($size, $line-height, $weight) {
+  font-family: v.$font-main;
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+//Regular 400
+@mixin text-18-regular {
+  @include text(18px, 18px, 400);
+}
+
+@mixin text-16-regular {
+  @include text(16px, 24px, 400);
+}
+
+@mixin text-15-regular {
+  @include text(15px, 27.45px, 400);
+}
+
+@mixin text-14-regular {
+  @include text(14px, 22px, 400);
+}
+
+@mixin text-10-regular {
+  @include text(10px, 12px, 400);
+}
+
+//Medium 500
+@mixin text-14-medium {
+  @include text(14px, 25.62px, 500);
+}
+
+//Semi-bold 600
+
+@mixin text-16-24-semibold {
+  @include text(16px, 24px, 600);
+}
+@mixin text-16-semibold {
+  @include text(16px, 13px, 600);
+}
+@mixin text-18-semibold {
+  @include text(18px, 18px, 600);
+}
+
+@mixin text-36-semibold {
+  @include text(36px, 36px, 600);
+}
+
+//Bold 700
+
+@mixin text-48-bold {
+  @include text(48px, 48px, 700);
+}

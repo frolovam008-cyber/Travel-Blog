@@ -1,0 +1,93 @@
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.create-comment-form {
+  display: flex;
+  padding: 28px 0;
+  width: 100%;
+  min-height: 600px;
+  border: 1px solid v.$color-border-gray;
+  border-radius: 24px;
+  background-color: v.$color-white;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 695px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  &__title {
+    margin: 0;
+    color: v.$color-black-title;
+    align-self: center;
+    @include ty.text-36-semibold;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    label {
+      @include ty.text-16-regular;
+      color: v.$color-black-85;
+      margin-bottom: 6px;
+    }
+
+    .universal-input,
+    .textarea-input {
+      width: 100%;
+      border: 1px solid v.$color-border-gray;
+      border-radius: 16px;
+      padding: 12px 16px;
+      background-color: v.$color-white;
+      color: v.$color-black-title;
+
+      &:focus {
+        border-color: v.$color-btn-primary;
+        outline: none;
+      }
+
+      &::placeholder {
+        color: v.$color-gray-update;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    .btn--register {
+      padding: 12px 28px;
+      border-radius: 16px;
+    }
+
+    .post-details__link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: v.$color-btn-primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      .post-details__link-arrow {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+

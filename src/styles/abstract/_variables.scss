@@ -1,0 +1,94 @@
+// Colors
+$color-white: #ffffff;
+$color-white-60: #FFFFFF99;
+$color-black: #000000;
+$color-black-title: #141414;
+$color-black-85: #000000D9;
+$color-black-25: #00000040;
+
+$color-gray: #868383;
+$color-gray-update: #BDBDBD;
+
+//Buttons
+$color-btn-primary:#FFA902;
+$color-btn-primary-disabled:#45526E;
+
+$color-btn-secondary: #393B3C;
+$color-btn-secondary-border: #00000066;
+$color-btn-secondary-disabled: #747474;
+$color-btn-secondary-hover: #ffffff;
+$color-btn-secondary-border-hover: #000000;
+$color-renew:#333333;
+$color-renew-border: #00000066;
+$color-btn-active: #B4A9FF;
+// error
+$color-error:#FF4D4F;
+//input-star
+$color-input-star:#FF4D4F;
+
+
+// Backgrounds
+$background-main:#F9F9F9;
+
+//Border
+$color-border-gray: #E5E5EA;
+$color-border-input: #D9D9D9;
+
+
+
+// **search
+$background-secondary:#393B3C;
+
+// Rating
+$rating-star-size-lg: 16px;
+$rating-star-size-md: 14px;
+$rating-star-size-sm: 10px;
+
+// Typography
+$font-main: "Poppins", "Arial", sans-serif;
+
+
+// Viewports
+$vp-desktop-xl: 1920px;
+$vp-desktop-l: 1600px;
+$vp-desktop: 1280px;
+
+$vp-laptop: 1024px;
+
+$vp-tablet: 768px;
+
+$vp-mobile-l: 425px;
+$vp-mobile: 375px;
+$vp-mobile-sm: 320px;
+
+// Animations
+$transition-300: 0.3s ease-in;
+
+
+// Z-INDEX SCALE (layers)
+
+// базовые слои
+$z-base: 0;
+$z-content: 1;
+$z-raised: 10;
+
+// интерактивные элементы
+$z-dropdown: 100;
+$z-sticky: 200;
+
+// layout
+$z-header: 500;
+
+// перекрывающие слои
+$z-overlay: 900;
+
+// модальные окна
+$z-modal: 1000;
+$z-modal-content: 1010;
+
+// всплывающие элементы поверх модалок
+$z-tooltip: 1100;
+$z-toast: 1200;
+
+
+  

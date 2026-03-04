@@ -1,0 +1,93 @@
+@use "@/styles/abstract/typography" as ty;
+@use "@/styles/abstract/variables" as v;
+@use "@/styles/abstract/mixins" as m;
+
+.profile-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  &__content {
+    position: relative;
+  }
+
+  &__btn-update {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__avatar {
+    width: 100%;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__avatar img {
+    width: 240px;
+    height: 240px;
+  }
+
+  &__avatar-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    @include ty.text-36-semibold;
+    color: v.$color-black-title;
+  }
+
+    &__data{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:30px;
+    
+  }
+
+  &__unit{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:2px;
+    
+  }
+
+  &__city-span {
+    @include ty.text-14-regular;
+    color: v.$color-black-85;
+  }
+
+  &__city {
+    margin: 0;
+    padding: 0;
+    @include ty.text-18-regular;
+    color: v.$color-black;
+  }
+
+  &__bio-span {
+    margin: 0;
+    padding: 0;
+    @include ty.text-16-regular;
+    color: v.$color-black;
+  }
+
+    &__bio {
+    margin: 0;
+    padding: 0;
+    @include ty.text-16-regular;
+    color: v.$color-black;
+  }
+}
