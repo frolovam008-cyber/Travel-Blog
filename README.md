@@ -77,7 +77,7 @@ Key architectural decisions:
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/Travel-Blog.git
+git clone https://github.com/frolovam008-cyber/Travel-Blog.git
 cd Travel-Blog
 npm install
 npm run dev
