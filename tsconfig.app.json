@@ -25,9 +25,9 @@
     "noUncheckedSideEffectImports": true,
 
     /* Alias @ для src */
-    "baseUrl": "src",
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["src/*"]
     }
   },
   "include": ["src"]
