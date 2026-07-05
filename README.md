@@ -11,7 +11,7 @@ The project demonstrates scalable frontend architecture, typed state management,
 
 ### Frontend
 
-* React
+* Reactnpm 
 * TypeScript
 * Vite
 * SCSS
