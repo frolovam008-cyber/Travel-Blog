@@ -1,20 +1,18 @@
-
 import { useEffect, useRef } from "react";
 import { useInfiniteQuery, type InfiniteData } from "@tanstack/react-query";
 import axios from "axios";
 import { PostCard } from "@/components/PostCard/PostCard";
 import { useAppSelector } from "@/hooks/useAppSelectorDispatch";
 import { useNavigate } from "react-router-dom";
-import {Button} from "@/components/common/Button/Button";
+import { Button } from "@/components/common/Button/Button";
 import "@/components/PostsList/PostsList.scss";
 import type { Post } from "@/types/types";
-
 
 const POSTS_PER_PAGE = 6;
 
 export const PostsList = () => {
   const listRef = useRef<HTMLUListElement | null>(null);
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const isAuth = useAppSelector((state) => state.auth.isAuth);
 
@@ -37,7 +35,7 @@ export const PostsList = () => {
       const res = await axios.get<Post[]>(
         `https://travelblog.skillbox.cc/api/posts?limit=${POSTS_PER_PAGE}&offset=${
           pageParam * POSTS_PER_PAGE
-        }`
+        }`,
       );
       return res.data;
     },
@@ -73,12 +71,20 @@ export const PostsList = () => {
 
   const infiniteData = data;
 
-  const allPosts: Post[] = infiniteData
-    ? infiniteData.pages.flat()
-    : [];
+  const allPosts: Post[] = infiniteData ? infiniteData.pages.flat() : [];
 
   return (
     <div className="posts">
+      <div className="posts__add-post">
+        {isAuth && (
+          <Button
+            className="btn--add-post"
+            onClick={() => navigate("/posts/create")}
+          >
+            Добавить мое путешествие
+          </Button>
+        )}
+      </div>
       <ul className="posts__list" ref={listRef}>
         {allPosts.map((post) => (
           <li key={post.id} className="posts__item">
@@ -90,17 +96,6 @@ export const PostsList = () => {
           <li className="posts__loading">Загрузка ещё...</li>
         )}
       </ul>
-
-    <div className="posts__add-post">
-    
-      {isAuth && (
-        <Button className="btn--add-post" onClick={() => navigate("/posts/create")}>
-          Добавить мое путешествие
-        </Button>
-      )}
-    </div>
     </div>
   );
 };
-
-
